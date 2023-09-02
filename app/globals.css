@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.animText {
+  
+  background: linear-gradient(to right, #30CFD0 0%,#d7ff71 50%, #ff0505 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
