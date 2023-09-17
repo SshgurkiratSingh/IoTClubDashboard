@@ -2,6 +2,7 @@ import ClientOnly from "@/app/components/ClientOnly";
 import EmptyState from "@/app/components/Empty";
 import SensorFDashboardForTeam from "./sensorDashBoardForTeam";
 import TeamMember from "@/app/components/TeamMember";
+import HistoryPage from "./historyPage";
 
 interface IParams {
   teamId: string;
@@ -13,7 +14,6 @@ const teamDashBoard = async ({ params }: { params: IParams }) => {
     <div className="flex flex-col justify-center items-center w-full  ">
       <ClientOnly>
         <div className="m-1 flex flex-col  items-center ">
-
           <div className="flex flex-col ">
             <div className="flex flex-col m-2  transition items-center overflow-hidden">
               <div className="animText  m-1">Team {params.teamId} </div>
@@ -24,6 +24,7 @@ const teamDashBoard = async ({ params }: { params: IParams }) => {
             <SensorFDashboardForTeam teamId={params.teamId} />
           </div>
         </div>
+        <HistoryPage teamId={params.teamId} />
       </ClientOnly>
     </div>
   );
