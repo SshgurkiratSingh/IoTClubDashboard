@@ -20,7 +20,7 @@
     "jspdf-autotable": "^3.6.0",
     "lodash": "^4.17.21",
     "mqtt": "^5.1.2",
-    "next": "13.4.19",
+    "next": "13.5.4",
     "paho-mqtt": "^1.1.0",
     "postcss": "8.4.29",
     "react": "18.2.0",
