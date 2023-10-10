@@ -5,7 +5,7 @@ import HistoryTable from "./historyPage";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between p-4 md:p-24">
+    <main className=" p-4 md:p-24">
       <Container>
         <HistoryTable />
       </Container>
