@@ -53,7 +53,11 @@ const AddUserCard: React.FC = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          setServerMessage(data.message);
+          if (data.message) {
+            setServerMessage(data.message);
+          }else {
+            setServerMessage(data.error);
+          }
         })
         .catch((error) => {
           console.error("Error:", error);

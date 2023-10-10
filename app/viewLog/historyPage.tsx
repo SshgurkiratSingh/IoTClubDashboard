@@ -1,8 +1,9 @@
 "use client";
-import jsPDF from "jspdf";
 import React, { useState, useEffect } from "react";
 import Paginate from "react-paginate";
-import XLSX from "xlsx";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
+
 interface LogEntry {
   UID: string;
   timestamp: string;
@@ -15,21 +16,15 @@ interface LogEntry {
 const HistoryTable: React.FC = () => {
   const [data, setData] = useState<LogEntry[]>([]);
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState(0); // react-paginate uses zero-indexed page numbers
+  const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
 
-  const exportToExcel = () => {
-    const wb = XLSX.utils.book_new();
-    const ws = XLSX.utils.json_to_sheet(data);
-    XLSX.utils.book_append_sheet(wb, ws, "Data");
-    XLSX.writeFile(wb, "data.xlsx");
+  const exportToPDF = () => {
+    const doc = new jsPDF();
+    autoTable(doc, { html: "#my-table" });
+    doc.save("data.pdf");
   };
 
-  // const exportToPDF = () => {
-  //   const doc = new jsPDF();
-  //   autoTable(doc, { html: "#my-table" });
-  //   doc.save("data.pdf");
-  // };
   useEffect(() => {
     const interval = setInterval(() => {
       fetch("https://iotclubbackend.gurkirat7092.repl.co/api/getEntryLogs")
@@ -59,15 +54,6 @@ const HistoryTable: React.FC = () => {
 
   return (
     <div className="bg-gray-900 text-white flex flex-col overflow-x-auto p-4">
-      {" "}
-      {/* <div className="flex space-x-4 mt-4">
-        <button onClick={exportToExcel} className="btn btn-primary">
-          Export to Excel
-        </button>
-        <button onClick={exportToPDF} className="btn btn-primary">
-          Export to PDF
-        </button>
-      </div> */}
       <input
         type="text"
         placeholder="Search by name or team"
@@ -75,7 +61,13 @@ const HistoryTable: React.FC = () => {
         onChange={(e) => setSearch(e.target.value)}
         className="p-2 mb-4 rounded bg-gray-800 text-white"
       />
-      <table className="table table-zebra rounded-2xl">
+      <button
+        onClick={exportToPDF}
+        className="mb-2 bg-blue-500 p-2 rounded text-white hover:bg-blue-400"
+      >
+        Export to PDF
+      </button>
+      <table id="my-table" className="table table-zebra rounded-2xl">
         <thead className="bg-gray-800 font-bold">
           <tr>
             <th className=" text-left">UID</th>
@@ -87,7 +79,7 @@ const HistoryTable: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((entry, index) => (
+          {currentData.reverse().map((entry, index) => (
             <tr key={index} className=" transition ease-in-out duration-300">
               <td className="">{entry.UID}</td>
               <td className="">{new Date(entry.timestamp).toLocaleString()}</td>

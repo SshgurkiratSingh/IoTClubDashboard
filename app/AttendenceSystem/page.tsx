@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between p-4 md:p-24">
+    <main className="flex flex-col min-h-screen items-center justify-between ">
       <Container>
-        <div className="card w-full md:w-96 bg-neutral text-neutral-content gap-5 m-5">
+        <div className="card w-full  bg-neutral text-neutral-content max-w-2xl">
           <div className="card-body items-center text-center ">
             <h2 className="card-title animText">
               Rfid Based Attendence System
@@ -22,13 +22,14 @@ export default function Home() {
                 href="/viewLog"
                 className="btn btn-primary w-full md:w-auto mb-2 md:mb-0"
               >
-                
-                  View Attendance Record
-              
+                View Attendance Record
               </Link>
-              <button className="btn btn-primary w-full md:w-auto">
+              <Link
+                href="/viewMembers"
+                className="btn btn-primary w-full md:w-auto mb-2 md:mb-0"
+              >
                 View All Members
-              </button>
+              </Link>
             </div>
           </div>
         </div>
