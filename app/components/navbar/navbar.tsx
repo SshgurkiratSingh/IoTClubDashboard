@@ -8,12 +8,12 @@ const Navbar = () => {
     <div>
       <div className="navbar bg-base-100 lg:solid">
         {/* Display heading for large screens only */}
-        <div className="hidden lg:block flex-1">
+        <div className=" flex-1">
           <Link href="/" className="btn btn-ghost normal-case text-xl animText">
             ISTC IoT Club
           </Link>
         </div>
-        <div className="m-1">
+        <div className="m-1 flex flex-col xl:flex-row">
           {/* <Link href="/">
             <div className="flex-none m-2 hidden lg:block">
               <button className="btn  ">Team Page</button>

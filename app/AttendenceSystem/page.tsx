@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-between ">
       <Container>
-        <div className="card w-full  bg-neutral text-neutral-content max-w-2xl">
+        <div className="card w-full  bg-neutral text-neutral-content max-w-4xl">
           <div className="card-body items-center text-center ">
             <h2 className="card-title animText">
               Rfid Based Attendence System
@@ -29,6 +29,12 @@ export default function Home() {
                 className="btn btn-primary w-full md:w-auto mb-2 md:mb-0"
               >
                 View All Members
+              </Link>
+              <Link
+                href="/AttendenceSystem"
+                className="btn btn-primary w-full md:w-auto mb-2 md:mb-0"
+              >
+                View Attendance Table
               </Link>
             </div>
           </div>

@@ -10,7 +10,7 @@ interface LogEntry {
   description: string;
   status: string;
   userName?: string;
-  userTeam?: string;
+  team?: string;
 }
 
 const HistoryTable: React.FC = () => {
@@ -40,7 +40,7 @@ const HistoryTable: React.FC = () => {
     (entry) =>
       search === "" ||
       entry.userName?.toLowerCase().includes(search.toLowerCase()) ||
-      entry.userTeam?.toLowerCase().includes(search.toLowerCase())
+      entry.team?.toLowerCase().includes(search.toLowerCase())
   );
 
   const pageCount = Math.ceil(filteredData.length / itemsPerPage);
@@ -86,7 +86,7 @@ const HistoryTable: React.FC = () => {
               <td className="">{entry.description}</td>
               <td className="">{entry.status}</td>
               <td className="">{entry.userName || "N/A"}</td>
-              <td className="">{entry.userTeam || "N/A"}</td>
+              <td className="">{entry.team || "N/A"}</td>
             </tr>
           ))}
         </tbody>
@@ -116,6 +116,7 @@ const HistoryTable: React.FC = () => {
         initialPage={0}
         disableInitialCallback={true}
       />
+      
     </div>
   );
 };
