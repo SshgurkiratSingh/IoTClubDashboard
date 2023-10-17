@@ -9,7 +9,6 @@ export default function Home() {
     <main className=" p-4 md:p-24">
       <Container>
         <HistoryTable />
-        <AttendanceTable />
       </Container>
     </main>
   );
