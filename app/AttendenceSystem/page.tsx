@@ -31,7 +31,7 @@ export default function Home() {
                 View All Members
               </Link>
               <Link
-                href="/AttendenceSystem"
+                href="/attendanceTable"
                 className="btn btn-primary w-full md:w-auto mb-2 md:mb-0"
               >
                 View Attendance Table
