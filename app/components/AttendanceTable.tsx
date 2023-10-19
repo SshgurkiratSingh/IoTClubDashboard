@@ -46,8 +46,8 @@ export default function AttendanceTable() {
   });
 
   return (
-    <div className="p-4">
-      <table className="table w-full">
+    <div className=" text-white flex flex-col overflow-x-auto p-4">
+      <table className="table  table-zebra rounded-2xl">
         <thead>
           <tr>
             <th>User Name</th>
