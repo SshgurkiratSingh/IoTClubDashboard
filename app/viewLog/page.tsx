@@ -6,7 +6,7 @@ import AttendanceTable from "../components/AttendanceTable";
 
 export default function Home() {
   return (
-    <main className=" p-4 md:p-24">
+    <main className=" ">
       <Container>
         <HistoryTable />
       </Container>

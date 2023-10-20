@@ -46,7 +46,7 @@ export default function AttendanceTable() {
   });
 
   return (
-    <div className=" text-white flex flex-col overflow-x-auto p-4">
+    <div className=" text-white flex flex-col overflow-x-auto ">
       <table className="table  table-zebra rounded-2xl">
         <thead>
           <tr>

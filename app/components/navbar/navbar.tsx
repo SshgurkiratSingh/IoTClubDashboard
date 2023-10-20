@@ -24,7 +24,7 @@ const Navbar = () => {
               <button className="btn  ">Customisation Page</button>
             </div>
           </Link> */}
-          <div className="flex flex-col justify-center items-center btn-ghost rounded-lg border-white transition hover:border-y-fuchsia-600">
+          {/* <div className="flex flex-col justify-center items-center btn-ghost rounded-lg border-white transition hover:border-y-fuchsia-600">
             <details className="dropdown ">
               <summary className=" btn">Select Team</summary>
               <ul className=" shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
@@ -33,7 +33,7 @@ const Navbar = () => {
                 ))}
               </ul>
             </details>
-          </div>{" "}
+          </div>{" "} */}
           <Link href="/AttendenceSystem">
             <div className="flex-none m-2 ">
               <button className="btn  btn-ghost rounded-lg border-white transition hover:border-y-fuchsia-600">
