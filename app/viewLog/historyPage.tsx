@@ -60,9 +60,9 @@ const HistoryTable: React.FC = () => {
 
   return (
     <ClientOnly>
-      <div className="bg-gray-900 text-white flex flex-col overflow-x-auto p-4">
+      <div className="bg-gray-900 text-white flex flex-col overflow-x-auto p-4 justify-center">
         {isLoading ? (
-          <div>
+          <div className="flex flex-1 justify-center items-center">
             <span className="loading loading-bars loading-lg"></span>
           </div>
         ) : (
@@ -111,12 +111,12 @@ const HistoryTable: React.FC = () => {
             </table>{" "}
             <Paginate
               previousLabel={
-                <span className="px-4 py-2 bg-blue-500 text-white rounded-lg transition duration-300 hover:bg-blue-400">
+                <span className="px-4 py-2 bg-blue-500 text-white rounded-lg transition duration-300 hover:bg-blue-400 btn ">
                   Previous Page
                 </span>
               }
               nextLabel={
-                <span className="px-4 py-2 bg-blue-500 text-white rounded-lg transition duration-300 hover:bg-blue-400">
+                <span className="px-4 py-2 bg-blue-500 text-white rounded-lg transition duration-300 hover:bg-blue-400 btn">
                   Next Page
                 </span>
               }

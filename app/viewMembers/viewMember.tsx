@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import ClientOnly from "../components/ClientOnly";
 
 interface User {
   UID: string;
@@ -60,7 +61,13 @@ const UserTable: React.FC = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <ClientOnly>
+        <div className="flex flex-1 justify-center items-center">
+          <span className="loading loading-bars loading-lg"></span>
+        </div>
+      </ClientOnly>
+    );
   }
 
   if (!users) {

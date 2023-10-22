@@ -5,7 +5,7 @@ import ClientOnly from "../components/ClientOnly";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between overflow-hidden">
+    <main className="flex flex-col min-h-screen items-center justify-between overflow-hidden bg-black">
       <Container>
         <ClientOnly>
           <div className="card w-full  bg-neutral text-neutral-content xl:max-w-4xl max-w-md">
@@ -13,7 +13,7 @@ export default function Home() {
               <h2 className="card-title animText">
                 Rfid Based Attendence System
               </h2>
-              <div className="overflow-hidden">
+              {/* <div className="overflow-hidden">
                 <p>
                   User Validation Endpoint:
                   <div className="xl:mockup-browser-toolbar">
@@ -26,7 +26,7 @@ export default function Home() {
                     </code>
                   </div>
                 </p>
-              </div>
+              </div> */}
 
               <div className="flex flex-col md:flex-row justify-evenly gap-4 ">
                 <Link href="/addMember">

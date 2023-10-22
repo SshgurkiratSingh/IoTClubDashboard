@@ -145,7 +145,7 @@ ssss            display: grid;
         `}
           </style>
           <ClientOnly>
-            <div className="dbse">
+            <div className="dbse bg-black ">
               <div className="dbse-content group">
                 <h3 className="font-md text-xl ">CLUB PORTAL </h3>
                 <h1 className="font-bold group-hover:text-blue-400 transition">

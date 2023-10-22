@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="navbar bg-base-100 lg:solid">
         {/* Display heading for large screens only */}
         <div className=" flex-1">
-          <Link href="/" className="btn btn-ghost normal-case text-xl animText">
+          <Link href="/" className="btn btn-ghost normal-case text-md animText">
             ISTC IoT Club
           </Link>
         </div>
@@ -35,8 +35,8 @@ const Navbar = () => {
             </details>
           </div>{" "} */}
           <Link href="/AttendenceSystem">
-            <div className="flex-none m-2 ">
-              <button className="btn  btn-ghost rounded-lg border-white transition hover:border-y-fuchsia-600">
+            <div className="flex-none m-2 font-bold text-blue-400 ">
+              <button className="btn bg-black btn-ghost rounded-lg border-white transition hover:border-y-fuchsia-600">
                 Attendence System
               </button>
             </div>
